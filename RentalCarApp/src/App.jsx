@@ -3,16 +3,20 @@ import "./App.css";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import CarDetails from "./pages/CarDetails/CarDetails";
+import Favorites from "./pages/Favorites/Favorites";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<WelcomePage />} />
-        <Route path="/catalog" element={<CatalogPage />}>
-          <Route path="/catalog/:carId" element={<CarDetails />} />
-        </Route>
-      </Routes>
+      <Header>
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/catalog" element={<CatalogPage />}>
+            <Route path="/catalog/:carId" element={<CarDetails />} />
+          </Route>
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Header>
     </>
   );
 }
