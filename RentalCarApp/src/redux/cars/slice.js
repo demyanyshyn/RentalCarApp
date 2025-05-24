@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getBrands } from "./operations";
 
 const initialState = {
   isError: false,
@@ -11,6 +12,7 @@ const initialState = {
     minMileage: "",
     maxMileage: "",
   },
+  brands: [],
   pagination: { limit: "", page: 1 },
 };
 
@@ -18,7 +20,9 @@ const slice = createSlice({
   name: "cars",
   initialState,
   extraReducers: (builder) => {
-    builder;
+    builder.addCase(getBrands.fulfilled, (state, action) => {
+      state.brands = action.payload;
+    });
   },
 });
 

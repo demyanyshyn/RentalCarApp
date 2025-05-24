@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const carsApi = axios.create({
-  BaseUrl: "https://car-rental-api.goit.global",
+export const carsAPI = axios.create({
+  baseURL: "https://car-rental-api.goit.global/",
 });
 
-export const getCars = async () => {};
+export const PAGE_LIMIT = 12;
